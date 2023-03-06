@@ -1,0 +1,301 @@
+/*importacion de fuente*/
+@import "fuente";
+/*variables globales*/
+$color-titulos:  aliceblue;
+$color-subtitulo: rgb(233, 209, 194);
+$color-borde:  rgb(141, 136, 79);
+$volumen-fuente: 25px;
+
+
+/*estilo del navegador scss*/
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+    img{
+        width: 120px;
+        height: 120px; 
+        margin-top: 30px;
+        margin-right: 60px;
+       
+    }
+}
+
+.items{
+        ul{
+            li{
+                list-style: none;
+                display: inline-block;
+                margin: 50px;
+                text-align: center;
+                &:hover{
+                    transform: scale(1.1);
+                    a{
+                        color: $color-titulos;/*aplicacion de variable global*/
+                        font-family: $fuente-titulos; /*aplicacion de importacion de fuente*/
+                        font-size: ($volumen-fuente *2)-25; /*aplicacion de operador matematico*/
+                        text-decoration: none; 
+                    }
+                }
+                
+            }
+        }
+}
+
+/*aplicando estilo al section del home con flex en scss*/
+
+.contenedor-section{
+    display: flex;
+    justify-items: center;
+   
+ }
+
+ 
+
+ .titulo-1{
+   font-family: $fuente-titulos;
+    color:$color-subtitulo;
+    font-size: 27px;
+    padding-top: 7%;
+    text-align: center;
+ }
+ .titulo-2{
+    font-family: $fuente-titulos;
+    color: $color-titulos;
+    font-size: 40px;
+    padding-left: 12%;
+    margin-top: 6%;
+    text-align: center;
+  
+}
+
+.subscripcion{
+    a{
+        button{
+            margin: 30px;
+        }
+    }
+}
+
+/*aplicando condicional*/
+.boton{
+    color: $color-titulos;
+    font-family: $fuente-titulos;
+    font-size: 20px;
+    @if ($color-borde==rgb(141, 136, 79)){
+        background-color: rgb(141, 136, 79);
+    }/*aplicacion del condicional if*/
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+    border-color:  $color-borde
+}
+.boton{
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+/*estilo de la pagina Top 10 con grid en scss*/
+
+.titulo-3{
+    color:white;
+    font-family: $fuente-titulo2;
+    text-align: center;
+    font-size: 40px;
+    padding: 30px;
+}
+.parrafo-1{
+    font-size: 20px;
+    @extend .titulo-3; /*aplicacion de extend*/
+   
+
+}
+.grid-container{
+    margin: 30px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: 1fr;
+    
+}
+
+/*aplicacion de maps*/
+$estilos: (alineacion: center,
+            bordes: 20px,
+            color-1:  aliceblue
+);
+
+.item-1{
+    .item-3{
+        .item-5{
+            .item-7{
+                .item-9{
+                    .item-11{
+                        .item-13{
+                            .item-15{
+                                .item-17{
+                                    .item-19{
+                                        background-color:rgba(128, 128, 128, 0.51);
+                                        margin: 10px;
+                                        text-align: map-get($map: $estilos, $key: alineacion ); /*aplicando maps*/
+                                        font-size: 50px;
+                                        color: map-get($map: $estilos, $key: color-1 );
+                                        font-family: $fuente-titulo2;
+                                        height: 90px;
+                                        border-radius: map-get($map: $estilos, $key: bordes);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.item-2{
+    .item-4{
+        .item-6{
+            .item-8{
+                .item-10{
+                    .item-12{
+                        .item-14{
+                            .item-16{
+                                .item-18{
+                                    .item-20{
+                                        background-color:rgba(128, 128, 128, 0.51);;
+                                        margin: 10px;
+                                        text-align: map-get($map: $estilos, $key: alineacion); /*aplicando maps*/
+                                        font-size: 30px;
+                                        color: map-get($map: $estilos, $key: color-1);
+                                        font-family: $fuente-titulo2;
+                                        padding: 20px;
+                                        border-radius: map-get($map: $estilos, $key: bordes);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*estilo de la pagina comunidad con flex box*/
+
+.titulo-comunidad{
+    color: $color-titulos;
+    font-family: $fuente-titulo2;
+    text-align: center;
+    font-size: 40px;
+    padding: 30px;   
+}
+.flex-container{
+margin: 20px;
+padding: 20px;
+display: flex; 
+flex-direction: row;  
+justify-content: space-around; 
+}
+
+.titulo-libro{
+    color: $color-titulos;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 10px;     
+}
+
+.recomendacion-1{
+background-color: rgb(41, 48, 45);
+width: 350px;
+height: 400px;
+border: 1px beige solid;
+margin: 10px;
+border-radius: 10px;
+}
+
+.autor{
+    color: $color-titulos;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: $volumen-fuente;     
+}
+
+.referencia{
+    text-align: center;
+    padding: auto;
+    color: bisque;
+}
+
+.parrafo-1{
+    text-align: center;
+    color: $fuente-titulos;
+    padding: 10px;
+    
+}
+
+
+.video{
+    margin: 20px;
+    padding-left: 450px;
+}
+
+/*aplicando @media queris*/
+
+@media screen and (max-with: 480px){
+
+    .fondo{
+        background-size: 100%;
+    }
+    .logo{
+        img{
+            width: 60px;
+            height: 60px; 
+            margin-top: 15px;
+            margin-right: 30px;
+        }
+    }
+    
+    .items{
+        ul{
+            li{
+                list-style: none;
+                display: block;
+                margin: 50px;
+                text-align: center;
+            }
+        }
+    }
+       
+    
+    
+    .items{
+        ul{
+            li{
+                a{
+                    color: aliceblue;
+                    font-family: 'Plus Jakarta Sans', sans-serif;
+                    font-size: 15px;
+                    text-decoration: none;
+                }
+            }
+        }
+    } 
+       
+    
+    
+
+    .grid-container{
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        grid-template-rows: 1fr;  
+    }
+   
+}
